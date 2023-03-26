@@ -1,11 +1,10 @@
-/******************************************************
- *  Program Name: Simple Excel Report
- *  Developer: Ramesh Raj
- *  Contact: mr_anusiram@yahoo.com
- *  Date: March 18, 2023 
- *  Version: 1.0
- *  Description: This code creates a new worksheet called 'Revenue Report' from the master worksheet and copy columns A to U and AI to AL to the new worksheet
- ******************************************************/
+ '  Program Name: Simple Excel Report
+ '  Developer: Ramesh Raj
+ '  Contact: mr_anusiram@yahoo.com
+ '  Date: March 18, 2023 
+ '  Version: 1.0
+ '  Description: This code creates a new worksheet called 'Revenue Report' from the master worksheet and copy columns A to U and AI to AL to the new worksheet
+ 
 
 Sub CreateRevenueReport()
     Dim wsMaster As Worksheet
