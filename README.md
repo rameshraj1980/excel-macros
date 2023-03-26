@@ -1,9 +1,9 @@
 # excel-macros
-Overview:
+**Overview:**
 
 The CreateRevenueReport macro automates the process of creating a new worksheet called "Revenue Report" and copying selected columns from the "Master" worksheet to the new worksheet. 
 
-Requirements:
+**Requirements:**
 
 This macro can be used in Microsoft Excel 2007 or later versions.
 
@@ -25,7 +25,7 @@ The Developer ribbon should now be visible in the Excel ribbon at the top of the
 
 Note: If you cannot see the Developer tab after following the above steps, it may be because it is hidden. You can try unhiding it by going to File > Options > Customize Ribbon > Customize the Ribbon section > Reset > Reset all customizations. This will reset the ribbon to its default settings, which should include the Developer tab.
 
-How to use the macro:
+**How to use the macro:**
 
 Open the Excel workbook containing the "Master" worksheet.
 
@@ -46,7 +46,7 @@ The new worksheet will be activated and the columns will be auto-fit to fit the 
 
 Note: It is important to save the Excel workbook after running the macro to ensure that the new worksheet is saved along with the workbook.
 
-Code Explanation:
+**Code Explanation:**
 
 The CreateRevenueReport macro uses the following variables and steps:
 
