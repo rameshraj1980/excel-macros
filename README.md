@@ -39,12 +39,23 @@ Save the VBA module and close the VBA editor.
 
 Return to the Excel workbook and press ALT + F8 to open the Macros dialog box.
 
-Select the CreateRevenueReport macro from the list and click Run.
+Click on the Developer tab in the Excel ribbon (if you don't see the Developer tab, follow the steps in the previous answer to add it).
 
-The macro will create a new worksheet called "Revenue Report" and copy selected columns from the "Master" worksheet to the new worksheet.
-The new worksheet will be activated and the columns will be auto-fit to fit the data.
+Click on the Insert icon in the Controls group and select the Button control.
 
-Note: It is important to save the Excel workbook after running the macro to ensure that the new worksheet is saved along with the workbook.
+Click and drag the cursor on the worksheet to draw the button.
+
+In the Assign Macro dialog box, type CreateRevenueReport in the Macro name field and click OK.
+
+The CreateRevenueReport macro is now assigned to the button.
+
+Right-click on the button and select Edit Text to change the text on the button (e.g., "Generate Report").
+
+Click on the worksheet outside of the button to deselect it.
+
+Now, when you click the button, it will run the CreateRevenueReport macro and generate the report on a new worksheet.
+
+Note: If you want to move the button to a different location on the worksheet, click and drag it to the desired location. You can also resize the button by clicking and dragging its edges or corners.
 
 **Code Explanation:**
 
