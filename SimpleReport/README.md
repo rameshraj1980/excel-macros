@@ -27,33 +27,31 @@ Note: If you cannot see the Developer tab after following the above steps, it ma
 
 **How to use the macro:**
 
-Open the Excel workbook containing the "Master" worksheet.
+* Open the Excel workbook containing the "Master" worksheet.
 
-Press ALT + F11 to open the VBA editor.
+* Press ALT + F11 to open the VBA editor.
 
-In the VBA editor, Click on 'Insert' and select 'Module'.
+* In the VBA editor, Click on 'Insert' and select 'Module'.
 
-Copy and paste the code for the CreateRevenueReport macro into the module.
+* Copy and paste the code for the CreateRevenueReport macro into the module.
 
-Save the VBA module and close the VBA editor.
+* Save the VBA module and close the VBA editor.
 
-Return to the Excel workbook and press ALT + F8 to open the Macros dialog box.
+* Return to the Excel workbook and press ALT + F8 to open the Macros dialog box.
 
-Click on the Developer tab in the Excel ribbon (if you don't see the Developer tab, follow the steps in the previous answer to add it).
+* Click on the Developer tab in the Excel ribbon (if you don't see the Developer tab, follow the steps in the previous answer to add it).
 
-Click on the Insert icon in the Controls group and select the Button control.
+* Click on the Insert icon in the Controls group and select the Button control.
 
-Click and drag the cursor on the worksheet to draw the button.
+* Click and drag the cursor on the worksheet to draw the button.
 
-In the Assign Macro dialog box, type CreateRevenueReport in the Macro name field and click OK.
+* In the Assign Macro dialog box, type CreateRevenueReport in the Macro name field and click OK. The CreateRevenueReport macro is now assigned to the button.
 
-The CreateRevenueReport macro is now assigned to the button.
+* Right-click on the button and select Edit Text to change the text on the button (e.g., "Generate Report").
 
-Right-click on the button and select Edit Text to change the text on the button (e.g., "Generate Report").
+* Click on the worksheet outside of the button to deselect it.
 
-Click on the worksheet outside of the button to deselect it.
-
-Now, when you click the button, it will run the CreateRevenueReport macro and generate the report on a new worksheet.
+* Now, when you click the button, it will run the CreateRevenueReport macro and generate the report on a new worksheet.
 
 Note: If you want to move the button to a different location on the worksheet, click and drag it to the desired location. You can also resize the button by clicking and dragging its edges or corners.
 
@@ -61,22 +59,22 @@ Note: If you want to move the button to a different location on the worksheet, c
 
 The CreateRevenueReport macro uses the following variables and steps:
 
-Dim wsMaster As Worksheet: creates a worksheet variable for the "Master" worksheet.
+* Dim wsMaster As Worksheet: creates a worksheet variable for the "Master" worksheet.
 
-Dim wsRevenueReport As Worksheet: creates a worksheet variable for the new "Revenue Report" worksheet.
+* Dim wsRevenueReport As Worksheet: creates a worksheet variable for the new "Revenue Report" worksheet.
 
-Dim lastRow As Long: creates a variable for the last row of data in the "Master" worksheet.
+* Dim lastRow As Long: creates a variable for the last row of data in the "Master" worksheet.
 
-Set wsMaster = ThisWorkbook.Worksheets("Master"): sets the wsMaster variable to reference the "Master" worksheet.
+* Set wsMaster = ThisWorkbook.Worksheets("Master"): sets the wsMaster variable to reference the "Master" worksheet.
 
-Set wsRevenueReport = ThisWorkbook.Worksheets.Add: creates a new worksheet and sets the wsRevenueReport variable to reference it.
+* Set wsRevenueReport = ThisWorkbook.Worksheets.Add: creates a new worksheet and sets the wsRevenueReport variable to reference it.
 
-wsRevenueReport.Name = "Revenue Report": renames the new worksheet to "Revenue Report".
+* wsRevenueReport.Name = "Revenue Report": renames the new worksheet to "Revenue Report".
 
-lastRow = wsMaster.Cells.Find("*", SearchOrder:=xlByRows, SearchDirection:=xlPrevious).Row: finds the last row of data in the "Master" worksheet and sets the lastRow variable to its row number.
+* lastRow = wsMaster.Cells.Find("*", SearchOrder:=xlByRows, SearchDirection:=xlPrevious).Row: finds the last row of data in the "Master" worksheet and sets the lastRow variable to its row number.
 
-wsMaster.Range("A1:U" & lastRow & ", AI1:AL" & lastRow).Copy Destination:=wsRevenueReport.Range("A1"): copies selected columns from the "Master" worksheet to the new "Revenue Report" worksheet.
+* wsMaster.Range("A1:U" & lastRow & ", AI1:AL" & lastRow).Copy Destination:=wsRevenueReport.Range("A1"): copies selected columns from the "Master" worksheet to the new "Revenue Report" worksheet.
 
-wsRevenueReport.Columns.AutoFit: auto-fits the columns in the new "Revenue Report" worksheet.
+* wsRevenueReport.Columns.AutoFit: auto-fits the columns in the new "Revenue Report" worksheet.
 
-wsRevenueReport.Activate: activates the new "Revenue Report" worksheet.
+* wsRevenueReport.Activate: activates the new "Revenue Report" worksheet.
