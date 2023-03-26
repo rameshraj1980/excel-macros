@@ -4,11 +4,7 @@
  *  Contact: mr_anusiram@yahoo.com
  *  Date: March 18, 2023 
  *  Version: 1.0
- *  Description: This code creates a new worksheet called 'Revenue Report'
- *  from the master worksheet and copy A to U and AI to AL 
- *  project Z for company ABC.
- *  Acknowledgments: Thanks to Jane Doe for providing 
- *  valuable feedback during code review.
+ *  Description: This code creates a new worksheet called 'Revenue Report' from the master worksheet and copy columns A to U and AI to AL to the new worksheet
  ******************************************************/
 
 Sub CreateRevenueReport()
