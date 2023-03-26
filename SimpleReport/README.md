@@ -11,17 +11,17 @@ The Excel workbook must contain a worksheet named "Master" with revenue data in 
 
 The steps to add the Developer ribbon in Excel:
 
-Open Excel and click on the File tab in the top left corner.
+* Open Excel and click on the File tab in the top left corner.
 
-Click on Options in the left menu to open the Excel Options dialog box.
+* Click on Options in the left menu to open the Excel Options dialog box.
 
-Click on Customize Ribbon in the left menu.
+* Click on Customize Ribbon in the left menu.
 
-In the right pane, under the Customize the Ribbon section, check the box next to Developer.
+* In the right pane, under the Customize the Ribbon section, check the box next to Developer.
 
-Click on OK to save the changes and close the Excel Options dialog box.
+* Click on OK to save the changes and close the Excel Options dialog box.
 
-The Developer ribbon should now be visible in the Excel ribbon at the top of the screen.
+* The Developer ribbon should now be visible in the Excel ribbon at the top of the screen.
 
 Note: If you cannot see the Developer tab after following the above steps, it may be because it is hidden. You can try unhiding it by going to File > Options > Customize Ribbon > Customize the Ribbon section > Reset > Reset all customizations. This will reset the ribbon to its default settings, which should include the Developer tab.
 
