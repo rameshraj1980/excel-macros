@@ -31,7 +31,7 @@ Open the Excel workbook containing the "Master" worksheet.
 
 Press ALT + F11 to open the VBA editor.
 
-In the VBA editor, insert a new module or open an existing one.
+In the VBA editor, Click on 'Insert' and select 'Module'.
 
 Copy and paste the code for the CreateRevenueReport macro into the module.
 
