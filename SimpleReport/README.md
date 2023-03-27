@@ -1,11 +1,9 @@
 # excel-macros
 **Overview:**
 
-The CreateRevenueReport macro automates the process of creating a new worksheet called "Revenue Report" and copying selected columns from the "Master" worksheet to the new worksheet. 
+The SimpleExcelReport macro automates the process of creating a new worksheet called "Revenue Report" and copying selected columns from the "Master" worksheet to the new worksheet. 
 
 **Requirements:**
-
-This macro can be used in Microsoft Excel 2007 or later versions.
 
 The Excel workbook must contain a worksheet named "Master" with revenue data in columns A to U and AI to AL.
 
@@ -33,31 +31,31 @@ Note: If you cannot see the Developer tab after following the above steps, it ma
 
 * In the VBA editor, Click on 'Insert' and select 'Module'.
 
-* Copy and paste the code for the CreateRevenueReport macro into the module.
+* Copy and paste the code for the SimpleExcelReport macro into the module.
 
 * Save the VBA module and close the VBA editor.
 
 * Return to the Excel workbook and press ALT + F8 to open the Macros dialog box.
 
-* Click on the Developer tab in the Excel ribbon (if you don't see the Developer tab, follow the steps in the previous answer to add it).
+* Click on the Developer tab in the Excel ribbon.
 
 * Click on the Insert icon in the Controls group and select the Button control.
 
 * Click and drag the cursor on the worksheet to draw the button.
 
-* In the Assign Macro dialog box, type CreateRevenueReport in the Macro name field and click OK. The CreateRevenueReport macro is now assigned to the button.
+* In the Assign Macro dialog box, type SimpleExcelReport in the Macro name field and click OK. The SimpleExcelReport macro is now assigned to the button.
 
 * Right-click on the button and select Edit Text to change the text on the button (e.g., "Generate Report").
 
 * Click on the worksheet outside of the button to deselect it.
 
-* Now, when you click the button, it will run the CreateRevenueReport macro and generate the report on a new worksheet.
+* Now, when you click the button, it will run the SimpleExcelReport macro and generate the report on a new worksheet.
 
 Note: If you want to move the button to a different location on the worksheet, click and drag it to the desired location. You can also resize the button by clicking and dragging its edges or corners.
 
 **Code Explanation:**
 
-The CreateRevenueReport macro uses the following variables and steps:
+The SimpleExcelReport macro uses the following variables and steps:
 
 * Dim wsMaster As Worksheet: creates a worksheet variable for the "Master" worksheet.
 
