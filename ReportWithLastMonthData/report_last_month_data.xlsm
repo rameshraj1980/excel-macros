@@ -1,0 +1,51 @@
+Sub GenerateReport()
+
+    Dim wsMaster As Worksheet
+    Dim wsReport As Worksheet
+    Dim lastMonthStart As Date
+    Dim lastMonthEnd As Date
+    Dim lastRow As Long
+    Dim i As Long
+    Dim j As Long
+    
+    ' Set references to Master worksheet
+    Set wsMaster = ThisWorkbook.Worksheets("Master")
+    
+    ' Set last month start and end dates
+    lastMonthStart = DateSerial(Year(Date), Month(Date) - 1, 1)
+    lastMonthEnd = DateSerial(Year(Date), Month(Date), 0)
+    
+    ' Create new Report worksheet
+    Set wsReport = ThisWorkbook.Worksheets.Add(After:=wsMaster)
+    wsReport.Name = "Revenue Report"
+    
+    ' Filter Master sheet by last month's dates in column G
+    With wsMaster
+        .Range("A1:P1").AutoFilter
+        .Range("A1:P1").AutoFilter Field:=7, Criteria1:=">=" & Format(lastMonthStart, "yyyy-mm-dd"), Operator:=xlAnd, Criteria2:="<=" & Format(lastMonthEnd, "yyyy-mm-dd")
+    End With
+    
+    ' Copy filtered data to Report sheet
+    lastRow = wsMaster.Cells(wsMaster.Rows.Count, "A").End(xlUp).Row ' find last row in Master sheet
+    j = 1 ' initialize row counter for Report sheet
+    wsMaster.Range("A1:G1,K1:P1").Copy wsReport.Range("A1") ' copy column headings
+    j = j + 1 ' increment row counter for Report sheet
+    For i = 2 To lastRow ' start at row 2 to skip header
+        If wsMaster.Cells(i, 7).Value >= lastMonthStart And wsMaster.Cells(i, 7).Value <= lastMonthEnd Then
+            ' if row meets filter criteria, copy columns A to G and K to P to Report sheet
+            wsMaster.Range("A" & i & ":G" & i & ",K" & i & ":P" & i).Copy wsReport.Range("A" & j)
+            j = j + 1 ' increment row counter for Report sheet
+        End If
+    Next i
+    
+    ' Clear filter on Master sheet
+    wsMaster.Range("A1:P1").AutoFilter
+
+    ' Autofit columns in Report sheet
+    wsReport.Cells.EntireColumn.AutoFit
+    
+    'Select the new worksheet
+    wsReport.Activate
+
+    
+End Sub
