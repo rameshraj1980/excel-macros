@@ -6,7 +6,7 @@
  '  Description: This code creates a new worksheet called 'Revenue Report' from the master worksheet and copy columns A to U and AI to AL to the new worksheet
  
 
-Sub CreateRevenueReport()
+Sub SimpleExcelReport()
     Dim wsMaster As Worksheet
     Dim wsRevenueReport As Worksheet
     Dim lastRow As Long
