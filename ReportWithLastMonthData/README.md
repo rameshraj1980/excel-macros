@@ -24,20 +24,20 @@ Note: If you cannot see the Developer tab after following the above steps, it ma
 * Press ALT + F11 to open the Visual Basic Editor.
 * In the Editor, go to Insert > Module.
 * Copy and paste the macro code into the new module.
-* Close the Editor and go back to the worksheet.
+* Save & Close the Editor and go back to the worksheet.
 * Click on the Developer tab in the Excel ribbon.
 
 * Click on the Insert icon in the Controls group and select the Button control.
 
 * Click and drag the cursor on the worksheet to draw the button.
 
-* In the Assign Macro dialog box, type CreateRevenueReport in the Macro name field and click OK. The CreateRevenueReport macro is now assigned to the button.
+* In the Assign Macro dialog box, select the Macro name and click OK. The Report macro is now assigned to the button.
 
 * Right-click on the button and select Edit Text to change the text on the button (e.g., "Generate Report").
 
 * Click on the worksheet outside of the button to deselect it.
 
-* Now, when you click the button, it will run the CreateRevenueReport macro and generate the report on a new worksheet.
+* Now, when you click the button, it will run the Report macro and generate the report on a new worksheet.
 
 Note: If you want to move the button to a different location on the worksheet, click and drag it to the desired location. You can also resize the button by clicking and dragging its edges or corners.
 
