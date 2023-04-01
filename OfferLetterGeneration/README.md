@@ -26,6 +26,8 @@ Here are the steps to create a placeholder using MERGEFIELD:
 
 •	Click "Save" to save the template.
 
+Note: Please check "Offer_Letter_Template.dotx" for reference.
+
 **How to create placeholders & mail template?**
 
 •	Open a new email message in Outlook.
@@ -44,22 +46,40 @@ Here are the steps to create a placeholder using MERGEFIELD:
 
 •	Click on "Save".
 
+Note: Please check "OfferLetterMailTemplate.oft" for reference.
+
 **Here's what the code does:**
 
 1.	Declares necessary variables
+
 2.	Finds the last row of data in the Excel sheet
+
 3.	Creates a new Word application
+
 4.	Opens the offer letter template and replaces placeholders with values from the Excel sheet
+
 5.	Saves the offer letter document as a PDF file with the employee name as the file name
+
 6.	Opens the medical annexure template and replaces placeholders with values from the Excel sheet
+
 7.	Saves the medical annexure document as a PDF file with the employee name as the file name
+
 8.	Closes the Word documents
+
 9.	Calls the "CreateCompensationBreakup" subroutine
+
 10.	Creates an Outlook mail item and fills in the details
+
 11.	Gets the employee email address from the Excel sheet
+
 12.	Gets the employee name, position, and date of joining from the Excel sheet
+
 13.	Replaces placeholders in the email template with the employee details
+
 14.	Attaches the offer letter and medical annexure PDF files to the email
+
 15.	Sends the email
-The code assumes that there is a sheet named "Sheet1" in the Excel workbook, and the relevant data is present in the first 13 columns of the sheet. It also assumes that there is a Word template named "Offer_Letter_Template.dotx" and "Medical_Annexure_2_template.dotx" in the same folder as the Excel workbook and an Outlook email template named "OfferLetterMailTemplate.oft" in the same folder as the Excel workbook.
+
+The code assumes that there is a Word template named "Offer_Letter_Template.dotx" and "Medical_Annexure_2_template.dotx" in the same folder as the Excel workbook and an Outlook email template named "OfferLetterMailTemplate.oft" in the same folder as the Excel workbook.
+
 Note: This code is just an example and may need to be modified based on your specific requirements. It is also important to thoroughly test the code before using it in a production environment.
