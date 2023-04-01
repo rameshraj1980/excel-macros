@@ -27,7 +27,8 @@ Sub DraftOfferLetterMail()
     wApp.Visible = True
     
     ' Open the Offer Letter template
-    Set wdoc = wApp.Documents.Add(template:="C:\Users\INRARAJ\Automation\HR\Offer_Letter_Template.dotx", NewTemplate:=False, DocumentType:=0)
+    path = ThisWorkbook.path
+    Set wdoc = wApp.Documents.Add(template:=path & "\Offer_Letter_Template.dotx", NewTemplate:=False, DocumentType:=0)
     
     ' Replace placeholders with values from Excel sheet
     With wdoc
@@ -107,8 +108,7 @@ Sub DraftOfferLetterMail()
         empName = Sheet1.Cells(r, 1).Value
         ' Replace spaces with underscore to avoid issues with file names
         empName = Replace(empName, " ", "_")
-        ' Set the file path for saving the document
-        path = "C:\Users\INRARAJ\Automation\HR\"
+        
         ' Save the document with the employee name as the file name
         .ExportAsFixedFormat OutputFileName:=path & empName & "_Offer_Letter.pdf", _
             ExportFormat:=wdExportFormatPDF, OpenAfterExport:=False, OptimizeFor:=wdExportOptimizeForPrint, _
@@ -119,7 +119,7 @@ Sub DraftOfferLetterMail()
     
     
     ' Open the Medical Annexure 2 template
-Set wdoc2 = wApp.Documents.Add(template:="C:\Users\INRARAJ\Automation\HR\Medical_Annexure_2_template.dotx", NewTemplate:=False, DocumentType:=0)
+Set wdoc2 = wApp.Documents.Add(template:=path & "\Medical_Annexure_2_template.dotx", NewTemplate:=False, DocumentType:=0)
 
 ' Replace placeholders with values from Excel sheet
 With wdoc2
@@ -153,28 +153,30 @@ End With
     
     ' Create an Outlook mail item and fill in the details
     Set OutApp = CreateObject("Outlook.Application")
-    Set OutMail = OutApp.CreateItemFromTemplate("C:\Users\INRARAJ\Automation\HR\OfferLetterMailTemplate.oft")
+    Set OutMail = OutApp.CreateItemFromTemplate(ThisWorkbook.path & "\OfferLetterMailTemplate.oft")
     
     ' Get the employee email address from column M in the last row
     RecipientEmail = Sheet1.Cells(r, 13).Value
         
-    ' Get the employee name from column A in the last row
+    ' Get the employee name, position and data of joining from column A in the last row
     empName = Sheet1.Cells(r, 1).Value
+    Position = Sheet1.Cells(r, 5).Value
+    DOJ = Sheet1.Cells(r, 12).Value
     'Replace the placeholder text with the recipient name and email
     OutMail.HTMLBody = Replace(OutMail.HTMLBody, "{Emp Name}", empName)
+    OutMail.HTMLBody = Replace(OutMail.HTMLBody, "{Position}", Position)
+    OutMail.HTMLBody = Replace(OutMail.HTMLBody, "{DOJ}", DOJ)
     OutMail.To = RecipientEmail
     
     ' Replace spaces with underscore to avoid issues with file names
     empName = Replace(empName, " ", "_")
     With OutMail
         .Subject = "Offer Letter - FIMER India Private Limited"
-        .Attachments.Add "C:\Users\INRARAJ\Automation\HR\" & empName & "_Offer_Letter.pdf"
-        .Attachments.Add "C:\Users\INRARAJ\Automation\HR\" & empName & "_Medical_Annexure_2.pdf"
-        .Attachments.Add "C:\Users\INRARAJ\Automation\HR\" & empName & "_Compensation_Breakup.pdf"
-        .Attachments.Add "C:\Users\INRARAJ\Automation\HR\Pre-employment medical form.pdf"
+        .Attachments.Add path & empName & "_Offer_Letter.pdf"
+        .Attachments.Add path & empName & "_Medical_Annexure_2.pdf"
+        .Attachments.Add path & empName & "_Compensation_Breakup.pdf"
         .To = RecipientEmail
         .Display
     End With
-
 
 End Sub
