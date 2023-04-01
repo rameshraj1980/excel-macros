@@ -1,6 +1,6 @@
  '  Program Name: Offer Letter Generation
  '  Developer: Ramesh Raj
- '  Contact: mr_anusiram@yahoo.com
+ '  Contact: ramesh.raj@fimer.com
  '  Date: March 30, 2023
  '  Version: 1.0
  '  Description: This code creates Compensation Breakup in pdf format. It takes input from current sheet and inserts the values into excel templates and creates the required pdfs.
@@ -20,12 +20,12 @@ Sub CreateCompensationBreakup()
     Dim perBonus As Double
     
     ' Set file paths
-    filePath = "C:\Users\INRARAJ\Automation\HR\Compensation Breakup Sheet Template.xltx"
-    dataFilePath = "C:\Users\INRARAJ\Automation\HR\Offer_Data_Nos.xlsm"
+    filePath = ThisWorkbook.path & "\Compensation Breakup Sheet Template.xltx"
+    dataFilePath = ThisWorkbook.path & "\Offer_Data_Nos.xlsm"
     
     ' Open template workbook and get reference to worksheet
     Set wbTemplate = Workbooks.Open(filePath)
-    Set wsTemplate = wbTemplate.Worksheets("Email")
+    Set wsTemplate = wbTemplate.Worksheets("Sheet1")
     
     ' Open data workbook and get reference to worksheet
     Set wbData = Workbooks.Open(dataFilePath)
@@ -41,19 +41,19 @@ Sub CreateCompensationBreakup()
     
     ' Insert values into template sheet
     With wsTemplate
-        .Range("A7").Value = empName
-        .Range("A8").Value = offerNo
-        .Range("F12").Value = grossCTC
-        .Range("F13").Value = perBonus
+        .Range("A2").Value = empName
+        .Range("A3").Value = offerNo
+        .Range("F7").Value = grossCTC
+        .Range("F8").Value = perBonus
     End With
     
     ' Replace spaces with underscore to avoid issues with file names
     empName = Replace(empName, " ", "_")
     ' Save and close template workbook
     wsTemplate.ExportAsFixedFormat Type:=xlTypePDF, Filename:= _
-        "C:\Users\INRARAJ\Automation\HR\" & empName & "_Compensation_Breakup.pdf", _
+        ThisWorkbook.path & empName & "_Compensation_Breakup.pdf", _
         Quality:=xlQualityStandard, IncludeDocProperties:=True, IgnorePrintAreas:=False, OpenAfterPublish:=False
 
-    wbTemplate.Close savechanges:=False    
+    wbTemplate.Close savechanges:=False
     
 End Sub
