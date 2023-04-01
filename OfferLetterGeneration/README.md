@@ -82,4 +82,18 @@ Note: Please check "OfferLetterMailTemplate.oft" for reference.
 
 The code assumes that there is a Word template named "Offer_Letter_Template.dotx" and "Medical_Annexure_2_template.dotx" in the same folder as the Excel workbook and an Outlook email template named "OfferLetterMailTemplate.oft" in the same folder as the Excel workbook.
 
+**Here's what the code "DraftOfferLetterMail" does:**
+
+The CreateCompensationBreakup() subroutine creates a PDF file of a compensation breakup sheet for the latest employee in the data sheet.
+
+The subroutine first defines several variables, including two workbooks and their respective worksheets, a file path to the template file and the data file, and several variables that will hold the latest employee's data (employee name, offer number, gross CTC, and percentage bonus).
+
+Next, the file paths to the template and data files are set, and the template workbook is opened, and a reference to the worksheet is obtained. The data workbook is then opened, and a reference to its worksheet is obtained.
+
+The latest values of the employee's data are obtained by using the xlUp method to find the last row with data in each of the four columns that hold the employee data. These values are then inserted into the template worksheet.
+
+The employee's name is then modified to replace spaces with underscores to avoid issues with file names. The template worksheet is then saved as a PDF file using the ExportAsFixedFormat method with the employee name included in the file name.
+
+Finally, the template workbook is closed without saving any changes.
+
 Note: This code is just an example and may need to be modified based on your specific requirements. It is also important to thoroughly test the code before using it in a production environment.
