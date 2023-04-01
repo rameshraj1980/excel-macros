@@ -48,7 +48,7 @@ Note: Please check "Offer_Letter_Template.dotx" for reference.
 
 Note: Please check "OfferLetterMailTemplate.oft" for reference.
 
-**Here's what the code does:**
+**Here's what the code "DraftOfferLetterMail" does:**
 
 1.	Declares necessary variables
 
